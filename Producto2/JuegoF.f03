@@ -1,0 +1,14 @@
+ 
+      PROGRAM HELLO
+
+      write(*,*) 'Hola! Tratare de adivinar un numero. Piensa un numero entre 1 y10.'
+      call sleep(8)
+      write(*,*) 'Ahora multiplicalo por 9.'
+      call sleep(8)
+      write(*,*) 'Si el  numero tiene 2 digitos, sumalos entre si. Ej. 36 -> 3+6=9. Si tu numero tiene un solo digito, sumale 0.'
+      call sleep(10)
+      write(*,*) 'Al numero resultante sumale 4'
+      call sleep(8)
+      write(*,*) 'El resultado es 13 c:'
+      end PROGRAM HELLO
+
