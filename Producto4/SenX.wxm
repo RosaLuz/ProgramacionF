@@ -1,0 +1,46 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+f(x):= sin(x);
+
+t1(x):=taylor(f(x), x, 0, 1);
+
+t3(x):=taylor(f(x), x, 0, 3);
+
+t5(x):=taylor(f(x), x, 0, 5);
+
+t7(x):=taylor(f(x), x, 0, 7);
+
+fortran(t1(x));
+
+fortran(t3(x));
+
+fortran(t5(x));
+
+fortran(t7(x));
+
+tex[t1(x), t3(x), t5(x), t7(x)];
+
+plot2d ([f(x),t1(x), t3(x), t5(x), t7(x)], [x, -3.5, 3.5], [y, -1.5, 1.5],[style, [lines,4]],
+[color,magenta,green,blue,orange,red],
+[axes, solid], [ylabel,"y"], [xlabel,"x"],[box, false],[legend, false],
+[label,["P(1)",1.5,1.4],["P(5)",3.1,0.7],["y=Sen(x)",3,0.25],["P(7)",3.2, -0.5],
+["P(3)",2.2,-0.4],["y",-0.4,1.5],["x", 3.1,-0.15]]);
+[gnuplot_preamble, "set ylabel 'y'; set xlabel 'x' "],[box, false]);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
+/* [wxMaxima: input   end   ] */
+
+/* [wxMaxima: input   start ] */
+;
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

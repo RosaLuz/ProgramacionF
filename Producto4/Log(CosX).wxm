@@ -1,0 +1,38 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+f(x):= log(cos(x));
+
+t3(x):=taylor(f(x), x, 0, 3);
+
+t6(x):=taylor(f(x), x, 0, 6);
+
+t9(x):=taylor(f(x), x, 0, 9);
+
+t12(x):=taylor(f(x), x, 0, 12);
+
+fortran(t3(x));
+
+fortran(t6(x));
+
+fortran(t9(x));
+
+fortran(t12(x));
+
+tex[t3(x), t6(x), t9(x), t12(x)];
+
+plot2d ([f(x),t3(x), t6(x), t9(x), t12(x)], [x, -%pi/2, %pi/2], [y, -4, 0.2],[style, [lines,2]],
+[color,magenta,red,blue,green,orange],
+[axes, solid], [ylabel,"y"], [xlabel,"x"],[box, false],[legend, false],
+[label,["y=log[cos(x)]",-1.45,-2.5],["P(12)",-1.6,-2.6],["P(9)",-1.6,-2.25],["P(6)",-1.6, -1.8],
+["P(3)",-1.1,-0.45],["y",-0.4,1.5],["x", 3.1,-0.15]]);
+[gnuplot_preamble, "set ylabel 'y'; set xlabel 'x' "],[box, false]);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$

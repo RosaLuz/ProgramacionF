@@ -1,0 +1,38 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 13.04.2 ] */
+
+/* [wxMaxima: input   start ] */
+f(x):= (1+x)*exp(x);
+
+t3(x):=taylor(f(x), x, 0, 3);
+
+t5(x):=taylor(f(x), x, 0, 5);
+
+t10(x):=taylor(f(x), x, 0, 10);
+
+t14(x):=taylor(f(x), x, 0, 14);
+
+fortran(t3(x));
+
+fortran(t5(x));
+
+fortran(t10(x));
+
+fortran(t14(x));
+
+tex[t3(x), t5(x), t10(x), t14(x)];
+
+plot2d ([f(x),t3(x), t5(x), t10(x), t14(x)], [x, -8, 3], [y, -2, 1.5],[style, [lines,3]],
+[color,magenta,green,blue,orange,red],
+[axes, solid], [ylabel,"y"], [xlabel,"x"],[box, false],[legend, false],
+[label,["y=[(1+x)exp(x)]",-5.8,-0.1],["P(14)",-5.15,0.6],["P(10)",-3.35,0.1],["P(5)",-2, -0.25],
+["P(3)",-0.9,-0.2],["y",-0.4,1.5],["x", 3.1,-0.15]]);
+[gnuplot_preamble, "set ylabel 'y'; set xlabel 'x' "],[box, false]);
+/* [wxMaxima: input   end   ] */
+
+/* Maxima can't load/batch files which end with a comment! */
+"Created with wxMaxima"$
