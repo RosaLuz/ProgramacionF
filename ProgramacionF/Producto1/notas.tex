@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+
+
+\title{Tutorial breve de los comandos de Bash}
+\author{Rosa Luz Zamora Peinado}
+\date{05 de Febrero de 2015}
+
+
+\begin{document}
+
+\maketitle
+
+\section{¿Qué es {\tt bash}?}
+
+Bash (Bourne again shell) es un programa informático cuya función consiste en interpretar órdenes.Es un interpretador de comandos utilizado sobre el sistema operativo Linux. Su función es de mediar entre el usuario y el sistema. stá basado en la shell de Unix y es compatible con POSIX.
+
+\section{Navegación}
+
+Esta sección describe como se puede navegar entre archivos y directorios.
+
+\section{Husmeando en el sistema}
+
+Veremos 3 comandos:\\
+
+
+\begin{tabular}{|c|l|l|}
+\hline
+Comando & Descripción & Ejemplo \\
+\hline
+ls & listar contenido de directorios & ls -al \\ \hline
+less & Permite ver el contenido de archivos de texto & less aaa.txt \\ 
+\hline
+file & Nos regresa el tipo de archivo & file aaa.txt \\
+\hline
+pwd & Muestra el directorio actual & /home/rlzamorap \\
+\hline
+\end{tabular} 
+
+\section{Páginas del manual}
+
+El manual es una serie de páginas que te explican cada comando disponible en tu sistema incluyendo su función; te especifica cómo correrlos y que tipo de argumentos reciben.\\
+
+
+\begin{tabular}{|p{4cm}|p{6cm}|p{4cm}|}
+\hline
+Comando & Descripción & Ejemplo \\
+\hline
+Man command & Busca en la página del manual por un comando en particular. & man ls\\ \hline
+Man –k (search term) & Hace una búsqueda de las palabras clave para toda página del manual que las contenga. & man -help\\ \hline
+\end{tabular}
+
+\section{Manipulando archivos}
+
+Linux organiza su sistema jerárquicamente. Con el tiempo vas a acumular una gran cantidad de información. Es importante crear una estructura de directorios que ayuden a organizar esa información de una manera cómoda.\\
+
+\begin{tabular}{|p{4cm}|p{6cm}|p{4cm}|}
+\hline
+Comando & Descripción & Ejemplo \\
+\hline
+mkdir & Crea un directorio & mkdir DIRECTORIO \\ \hline
+rmdir & Borra un directorio & rmdir DIRECTORIO \\ \hline
+touch & Crear un archivo en blanco & touch ARCHIVO \\ \hline
+cp & Copia un archivo o directorio & cp DIRECTORIO \\ \hline
+mv & Mueve un archivo o directorio & mv DIRECTORIO Escritorio \\ \hline
+rm & Elimina un archivo o directorio & rm DIRECTORIO \\ \hline
+cd & Cambia de ubicación, de directorio & cd ESCRITORIO \\ \hline
+\end{tabular}
+
+\section{Vi - Editor de texto}
+
+Vi es una linea de comando editora de texto. como ya lo sabes, la línea de comando es ambiente un poco diferente a tu GUI. Vi ha sido diseñado para trabajar con limitaciones y aunque muchos están en desacerdo, en realidad brinda poderosos resultados.\\
+
+\begin{tabular}{|p{4cm}|p{6cm}|p{4cm}|}
+\hline
+Comando & Descripción & Ejemplo \\
+\hline
+vi & Editar un archivo & vi TTT \\ \hline
+cat & Ver un archivo & cat ARCHIVO \\ \hline
+less & Conveniente para ver archivos largos & less ARCHIVO \\ \hline
+\end{tabular}
+
+\section{Permisos}
+
+Los permisos de Linux permiten tres cosas que puedes hacer con un archivo: leer,  escribir o ejecutar.\\
+
+r read (leer) - Puedes ver los contenidos del archivo.\\
+w write (escribir) - Puedes cambiar los contenidos del archivo.\\
+x execute (ejecutar) - Puedes correr o ejecutar el archivo, puede ser un programa.\\
+
+\begin{tabular}{|p{4cm}|p{6cm}|p{4cm}|}
+\hline
+Comando & Descripción & Ejemplo \\ \hline
+chmod & Cambia los permisos de un archivo o directorio. & chmod 100 DIRECTORIO \\ \hline
+ls -ld & Muestra los permisos de un archivo o directorio en específico & ls -DIRECTORIO \\ \hline
+\end{tabular}
+
+\end{document}
+
+
+

@@ -1,0 +1,62 @@
+CODE FOR LINUX
+
+comando		- descripcion
+
+echo    	- se utiliza para desplegar mensajes. Ej. echo $SHELL
+
+pwd     	- Present Working Directory Te dice en que directorio te encuentras trabajando. ej. donde estamos en este momento
+
+ls      	- hace una lista del directorio
+
+-ls     	- indica que vamos a hacer una larga lista
+
+ls /etc 	- despliega una lista de todos los demas directorios
+
+ls -l /etc      - despliega una lista de los detalles de los demas directorios
+
+ls nombre       - despliega el contenido del directorio "nombre"
+
+ls al           - despliega el contenido del directorio actual incluyendo archivos ocultos
+
+Paths           - te llevan a un archivo o documento en particular
+
+~		- te lleva a un directorio raiz. ej. ~/Documents
+.		- es referencia al directorio actual. ej. ./ROSALUZ
+..		- te regresa a una jerarquia arriba . ej. ../Desktop
+
+Cd		- Cambiar la ubicación en la que estás trabajando. ej.mover a otro directorio.
+
+File		- Para obtener información sobre qué tipo de archivo es un archivo o un directorio. ej. file.txt
+file.exe	       	       		    – es un archivo o programa ejecutable.
+file.txt	 			    – un archivo de texto.
+file.png, file.gif, file.jpg		    – una imagen.
+
+Man <command>	    	- Busca en la página del manual por un comando en particular.
+
+Man –k (search term)	- Hace una búsqueda de las palabras clave para toda página del manual que las contenga.
+
+Mkdir	       		- crear un directorio. Ej. Crea un directorio.
+
+Rmdir			- borrar un directorio. Ej. Elimina un directorio.
+
+Touch			- crear un archivo en blanco.
+
+Cp			- copiar un archivo o directorio. Ej. Copia un archivo
+
+Move			- mueve un archivo o directorio.
+ 
+Rm			- eliminar un archivo.
+
+vi			- editar un archivo.
+
+cat			- ver un archivo.
+
+less			- conveniente para ver archivos largos.
+
+			* - representa cero o mas caracteres
+			? - representa un solo digito
+			[] - representa un conjunto de caracteres
+
+chmod			- cambia los permisos de un archivo o un directorio.
+
+ls -ld			- Vista de los permisos de un directorioe en especifico.

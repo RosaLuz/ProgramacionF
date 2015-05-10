@@ -1,0 +1,7 @@
+#include <iostream>
+
+int main()
+{
+  std::cout << "Hola! tratare de adivinar un numero.";
+  std::cout << "Piensa en un numero entre 1 y 10.";
+}
