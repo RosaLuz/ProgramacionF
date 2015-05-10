@@ -2,11 +2,11 @@ MODULE constantes
 IMPLICIT NONE
 REAL, PARAMETER :: rad=(4.0*ATAN(1.0))/180  
 REAL, PARAMETER :: pi=4.0*ATAN(1.0)
+
 INTEGER, PARAMETER :: puntos= 5000 
 
-
 REAL, PARAMETER :: rho = 1.29
-
+REAL, PARAMETER :: g = 9.81
 REAL, PARAMETER :: esfera = 0.47
 
 END MODULE constantes
@@ -23,16 +23,16 @@ REAL :: xmaxsf, ymaxsf, tiemposf
 
 anguloi=anguloi*rad
 
-xmaxsf = xi+((vi*vi*SIN(2*anguloi))/(9.8))
-ymaxsf = yi+(((vi*vi)*(SIN(anguloi)*SIN(anguloi)))/(19.6))
-tiemposf = (2*vi*SIN(anguloi))/(9.806)
+xmaxsf = xi+((vi*vi*SIN(2*anguloi))/(g))
+ymaxsf = yi+(((vi*vi)*(SIN(anguloi)*SIN(anguloi)))/(2*g))
+tiemposf = (2*vi*SIN(anguloi))/(g)
 
-OPEN (1, FILE="SinFriccion.dat")
+OPEN (1, file="SinFriccion.dat")
 
 DO I=1, puntos, 1
 t(I)=FLOAT(I)*0.01
 x(I) = xi + (vi*COS(anguloi)*t(I))
-y(I) = yi + (vi*SIN(anguloi)*t(I))-(4.9*t(I)*t(I))
+y(I) = yi + (vi*SIN(anguloi)*t(I))-((g/2)*t(I)*t(I))
 WRITE (1,1001) x(I), y(I)
 1001 FORMAT (f11.5,f11.5)
 IF (y(I)<0) EXIT
@@ -69,10 +69,10 @@ va(0) = vi*COS(anguloi)
 vb(0) = vi*SIN(anguloi)
 ad = (0.5*rho*area*cd)/masa
 pa(0) = -ad*va(0)*va(0)
-pb(0) = 9.8-(ad*vb(0)*vb(0))
+pb(0) = g-(ad*vb(0)*vb(0))
 c(0)=0
 
-OPEN (2, FILE="Friccion.dat")
+OPEN (2, file="Friccion.dat")
 WRITE (2,1001) a(0),b(0)
 1001 FORMAT (f11.5,f11.5)
 
@@ -81,7 +81,7 @@ DO I=0, puntos, 1
   va(I+1) = va(I)+pa(I)*c(I+1)  
   vb(I+1) = vb(I)+pb(I)*c(I+1)
   pa(I+1) = -ad*va(I)*va(I)
-  pb(I+1) = -9.8-(ad*va(I)*va(I))
+  pb(I+1) = -g-(ad*va(I)*va(I))
   a(I+1) = a(I)+va(I)*c(I+1)+(0.5*pa(I)*c(I+1)*c(I+1))
   b(I+1) = b(I)+vb(I)*c(I+1)+(0.5*pb(I)*c(I+1)*c(I+1))
   WRITE (2,*) a(I+1), b(I+1)
